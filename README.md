@@ -40,25 +40,25 @@ Please feel free to check out the code: [Amazon_Reviews_ELT](https://github.com/
 
 3. Next, we will create tables that are congruent with their pgAdmin table counterparts. It is important to select only the columns that are in the pgAdmin tables.
 
-customers_df
+Customers DataFrame
 
 ![customers_df](https://github.com/SoumyaAbraham/Amazon_Vine_Analysis/blob/main/Images/customers_df.PNG)
 
 Here, we have to make sure to change the Column header name to "customer_count".
 
-products_df
+Products DataFrame
 
 ![products_df](https://github.com/SoumyaAbraham/Amazon_Vine_Analysis/blob/main/Images/products_df.PNG)
 
 Notice we drop any duplicate product_id in this step. Product ID is the Primary key in the pgAdmin Products table therefore any duplicates will throw an error.
 
-review_id_df
+Review ID DataFrame
 
 ![review_id_df](https://github.com/SoumyaAbraham/Amazon_Vine_Analysis/blob/main/Images/review_id_df.PNG)
 
-In this case, we must make sure the review0date column in is 'yyyy-MM-dd' format.
+In this case, we must make sure the review_date column in is 'yyyy-MM-dd' format.
 
-vine_df
+Vine DataFrame
 
 ![vine_df](https://github.com/SoumyaAbraham/Amazon_Vine_Analysis/blob/main/Images/vine_df.PNG)
 
@@ -70,29 +70,29 @@ vine_df
 
 - The first cell is created to temporarily hold your database password, without divulging it, for security purposes. Type in your database password to form the connection.  
 
-- You will now proceed to load each database to the tables.
+- You will now proceed to load each dataframe to the tables.
 
 5. Once completed, open pgAdmin to ensure the database has been loaded.
 
-customers_table
+Customers Table
 
 ![customers_table](https://github.com/SoumyaAbraham/Amazon_Vine_Analysis/blob/main/Images/customer_table.PNG)
 
-products_table
+Products Table
 
 ![products_table](https://github.com/SoumyaAbraham/Amazon_Vine_Analysis/blob/main/Images/products_table-sql.PNG)
 
-review_id_table
+Review ID Table
 
 ![review_id_table](https://github.com/SoumyaAbraham/Amazon_Vine_Analysis/blob/main/Images/review_id.PNG)
 
-vine_table
+Vine Table
 
 ![vine_table](https://github.com/SoumyaAbraham/Amazon_Vine_Analysis/blob/main/Images/vine_table-sql.PNG)
 
 This concludes the first part of our project.
 
-## DELIVERABLE 2
+### DELIVERABLE 2
  
 We are now going to get into the Analysis portion of our project. We want to see how the Vine Reviews affect the product reviews as a whole. 
 
@@ -126,7 +126,7 @@ The code for this portion of the project can be found here: [Vine_Review_Analysi
   
  6. Repeat the step for all the rows that are not enrolled in the Vine program  
  
-        vine ==N
+        vine == N
     
   ![not_vine_df](https://github.com/SoumyaAbraham/Amazon_Vine_Analysis/blob/main/Images/not_vine_df.PNG)
     
@@ -149,13 +149,15 @@ The code for this portion of the project can be found here: [Vine_Review_Analysi
  That being said, only 18% (9 reviews) of the paid reviews are 5 star reviews.    
  On the other hand, 5% (78061 reviews) of the unpaid reviews are 5 star reviews.   
  
- From this, we can see infer: 
+ From this, we can see: 
  
   * There are a very few number of useful Vine member reviews in this database. Of them, a very small number of the reviews are 5 stars.  
   * There is a larger number of helpful, 5 star reviews from unpair reviewers.  
  Therefore, in this dataset, the Vine member Reviews do not cause a bias in overall rating of Video DVDs.
  
- In addition to this, let us check how many Paid and Unpaid reviewers there are. Earlier, we only considered the helpful paid and unpaid reviews. A look at this can give us an idea of how maany paid customers have been reached out to.  
+ ### Additional Analysis
+ 
+ Let us check how many Paid and Unpaid reviewers there are. Earlier, we only considered the helpful paid and unpaid reviews. A look at this can give us an idea of how many paid customers have been reached out to.  
  Let us take a look at these numbers:
  
  ![additional_data](https://github.com/SoumyaAbraham/Amazon_Vine_Analysis/blob/main/Images/addition.PNG)
